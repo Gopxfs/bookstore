@@ -1,9 +1,7 @@
-import Categories from "../components/Categories";
+import Categories from '../components/Categories';
 
-const CategoriesPage = () => {
-  return (
-    <Categories />
-  )
-}
+const CategoriesPage = () => (
+  <Categories />
+);
 
 export default CategoriesPage;

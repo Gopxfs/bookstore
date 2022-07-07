@@ -18,7 +18,7 @@ class App extends React.PureComponent {
           <Route path="/books" element={<BooksPage />} />
           <Route path="/categories" element={<CategoriesPage />} />
         </Routes>
-   
+
       </>
     );
   }

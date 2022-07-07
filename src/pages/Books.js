@@ -1,13 +1,11 @@
-import Books from "../components/Books";
-import AddNewBook from "../components/AddNewBook";
+import Books from '../components/Books';
+import AddNewBook from '../components/AddNewBook';
 
-const BooksPage = () => {
-  return (
-    <>
-      <Books />
-      <AddNewBook />
-    </>
-  )
-}
+const BooksPage = () => (
+  <>
+    <Books />
+    <AddNewBook />
+  </>
+);
 
 export default BooksPage;
