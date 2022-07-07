@@ -14,6 +14,7 @@ class App extends React.PureComponent {
       <>
         <Navbar />
         <Routes>
+          <Route path="/" element={<BooksPage />} />
           <Route path="/books" element={<BooksPage />} />
           <Route path="/categories" element={<CategoriesPage />} />
         </Routes>
