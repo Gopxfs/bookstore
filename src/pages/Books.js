@@ -1,7 +1,13 @@
 import Books from "../components/Books";
+import AddNewBook from "../components/AddNewBook";
 
 const BooksPage = () => {
-  <Books />
+  return (
+    <>
+      <Books />
+      <AddNewBook />
+    </>
+  )
 }
 
 export default BooksPage;
