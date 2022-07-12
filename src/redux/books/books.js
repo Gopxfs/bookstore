@@ -8,10 +8,16 @@ const initialState = {
 export default function booksReducer(state = initialState, action) {
   switch (action.type) {
     case ADD_BOOK: {
-      return state.books.push(action.book);
+      return [
+        ...state,
+        action.book,
+      ];
     }
     case REMOVE_BOOK: {
-      return state.books.filter((book) => book.id !== action.id);
+      return [
+        ...state.slice(0, action.index),
+        ...state.slice(action.index + 1, state.length),
+      ];
     }
     default: return state;
   }
@@ -24,9 +30,9 @@ export function addBook(book) {
   };
 }
 
-export function removeBook(id) {
+export function removeBook(index) {
   return {
     type: REMOVE_BOOK,
-    id,
+    index,
   };
 }
