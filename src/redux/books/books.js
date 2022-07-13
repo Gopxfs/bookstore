@@ -1,8 +1,27 @@
+import { useSelector } from 'react-redux';
+
 const ADD_BOOK = 'bookstore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
 
 const initialState = {
-  books: [],
+  books: [
+    {
+      title: 'book1',
+      author: 'author1',
+    },
+    {
+      title: 'book2',
+      author: 'author2',
+    },
+    {
+      title: 'book3',
+      author: 'author3',
+    },
+    {
+      title: 'book4',
+      author: 'author4',
+    },
+  ],
 };
 
 export default function booksReducer(state = initialState, action) {
@@ -35,4 +54,8 @@ export function removeBook(index) {
     type: REMOVE_BOOK,
     index,
   };
+}
+
+export function useBooks() {
+  return useSelector(() => initialState.books);
 }
