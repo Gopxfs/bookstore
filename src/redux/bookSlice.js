@@ -25,8 +25,7 @@ export const slice = createSlice({
   reducers: {
     addBook(state, { payload }) {
       return {
-        ...state,
-        payload,
+        books: [...state.books, payload],
       };
     },
     removeBook(state, { payload }) {
