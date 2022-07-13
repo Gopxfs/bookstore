@@ -33,9 +33,18 @@ export const slice = createSlice({
       };
     },
     removeBook(state, { payload }) {
+      let index = -1;
+      for (let i = 0; i < state.books.length; i += 1) {
+        if (state.books[i].id === payload) {
+          index = i;
+          break;
+        }
+      }
       return {
-        ...state.slice(0, payload),
-        ...state.slice(payload + 1, state.length),
+        books: [
+          ...state.books.slice(0, index),
+          ...state.books.slice(index + 1, state.books.length),
+        ],
       };
     },
   },
