@@ -14,6 +14,6 @@ export const slice = createSlice({
 
 export const { checkStatus } = slice.actions;
 
-export const selectCategories = (state) => state.user;
+export const selectCategories = (state) => state.categories;
 
 export default slice.reducer;

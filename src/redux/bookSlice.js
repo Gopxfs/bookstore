@@ -40,6 +40,6 @@ export const slice = createSlice({
 
 export const { addBook, removeBook } = slice.actions;
 
-export const selectBook = (state) => state.user;
+export const selectBook = (state) => state.book;
 
 export default slice.reducer;
