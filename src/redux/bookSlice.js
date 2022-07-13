@@ -21,19 +21,19 @@ export const slice = createSlice({
         author: 'author4',
       },
     ],
-    reducers: {
-      addBook(state, { book }) {
-        return [
-          ...state,
-          book,
-        ];
-      },
-      removeBook(state, { index }) {
-        return [
-          ...state.slice(0, index),
-          ...state.slice(index + 1, state.length),
-        ];
-      },
+  },
+  reducers: {
+    addBook(state, { payload }) {
+      return {
+        ...state,
+        payload,
+      };
+    },
+    removeBook(state, { payload }) {
+      return {
+        ...state.slice(0, payload),
+        ...state.slice(payload + 1, state.length),
+      };
     },
   },
 });

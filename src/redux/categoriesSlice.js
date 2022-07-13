@@ -4,10 +4,10 @@ export const slice = createSlice({
   name: 'categories',
   initialState: {
     categories: [],
-    reducers: {
-      checkStatus() {
-        return 'under construction';
-      },
+  },
+  reducers: {
+    checkStatus() {
+      return ('under construction');
     },
   },
 });
