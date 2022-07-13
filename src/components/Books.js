@@ -1,9 +1,9 @@
 import React from 'react';
-import { useBooks } from '../redux/books/books';
+import { useSelector } from 'react-redux';
 import Book from './Book';
 
 const Books = () => {
-  const bookList = useBooks();
+  const bookList = useSelector((state) => state.book.books);
   const bookListDisplay = [];
   for (let i = 0; i < bookList.length; i += 1) {
     const newBook = <Book title={bookList[i].title} author={bookList[i].author} />;
