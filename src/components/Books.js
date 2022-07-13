@@ -6,7 +6,13 @@ const Books = () => {
   const bookList = useSelector((state) => state.book.books);
   const bookListDisplay = [];
   for (let i = 0; i < bookList.length; i += 1) {
-    const newBook = <Book title={bookList[i].title} author={bookList[i].author} />;
+    const newBook = (
+      <Book
+        title={bookList[i].title}
+        author={bookList[i].author}
+        id={bookList[i].id}
+      />
+    );
     bookListDisplay.push(newBook);
   }
   return (
