@@ -3,10 +3,10 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 const baseURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/8jPJscW2sY5rPxOZDiOs/books';
 
 const createBookList = (data) => {
-  const bookList = []
+  const bookList = [];
   Object.values(data).forEach((value) => bookList.push(value[0]));
   return bookList;
-}
+};
 
 export const getBookListThunk = createAsyncThunk(
   'bookstore/getBookListThunk',
@@ -20,10 +20,15 @@ export const getBookListThunk = createAsyncThunk(
 export const addBookThunk = createAsyncThunk(
   'bookstore/addBookThunk',
   async (book) => {
+    const newBook = JSON.stringify(book);
     const response = await fetch(baseURL, {
       method: 'POST',
       body: JSON.stringify(book),
+      headers: {
+        'Content-type': 'application/json',
+      },
     });
+    console.log(newBook);
     return response.json();
   },
 );
