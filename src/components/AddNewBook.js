@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { addBook } from '../redux/bookSlice';
+import { addBookThunk } from '../redux/apiThunks';
 
 const AddNewBook = () => {
   const dispatch = useDispatch();
@@ -14,6 +15,7 @@ const AddNewBook = () => {
       item_id: Date.now(),
       category: 'not informed',
     };
+    dispatch(addBookThunk(newBook));
     dispatch(addBook(newBook));
     form.title.value = '';
     form.author.value = '';
