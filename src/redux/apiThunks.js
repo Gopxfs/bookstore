@@ -3,8 +3,14 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 const baseURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/8jPJscW2sY5rPxOZDiOs/books';
 
 const createBookList = (data) => {
+  const entries = Object.entries(data);
   const bookList = [];
-  Object.values(data).forEach((value) => bookList.push(value[0]));
+  for (let i = 0; i < entries.length; i += 1) {
+    const book = entries[i][1][0];
+    const key = entries[i][0];
+    book.item_id = key;
+    bookList.push(book);
+  }
   return bookList;
 };
 
@@ -20,7 +26,6 @@ export const getBookListThunk = createAsyncThunk(
 export const addBookThunk = createAsyncThunk(
   'bookstore/addBookThunk',
   async (book) => {
-    const newBook = JSON.stringify(book);
     const response = await fetch(baseURL, {
       method: 'POST',
       body: JSON.stringify(book),
@@ -28,7 +33,22 @@ export const addBookThunk = createAsyncThunk(
         'Content-type': 'application/json',
       },
     });
-    console.log(newBook);
+    return response.json();
+  },
+);
+
+export const removeBookThunk = createAsyncThunk(
+  'bookstore/removeBookThunk',
+  async (id) => {
+    const response = await fetch(`${baseURL}/${id}`, {
+      method: 'DELETE',
+      body: JSON.stringify({
+        item_id: id,
+      }),
+      headers: {
+        'Content-type': 'application/json',
+      },
+    });
     return response.json();
   },
 );
