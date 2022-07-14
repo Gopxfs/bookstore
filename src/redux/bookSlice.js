@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getBookListThunk } from './apiThunks';
+import { getBookListThunk, addBookThunk } from './apiThunks';
 
 export const slice = createSlice({
   name: 'book',
@@ -32,6 +32,7 @@ export const slice = createSlice({
     [getBookListThunk.fulfilled]: (state, { payload }) => ({
       books: payload,
     }),
+    [addBookThunk.fulfilled]: () => (console.log('Book added')),
   },
 });
 
