@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 const Navbar = () => (
   <nav>
+    <p>Gabriel&apos;s bookstore</p>
     <ul>
       <li>
         <NavLink to="/books">
