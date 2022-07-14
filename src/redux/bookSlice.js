@@ -1,30 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { getBookListThunk } from './apiThunks';
 
 export const slice = createSlice({
   name: 'book',
   initialState: {
-    books: [
-      {
-        title: 'book1',
-        author: 'author1',
-        id: 1,
-      },
-      {
-        title: 'book2',
-        author: 'author2',
-        id: 2,
-      },
-      {
-        title: 'book3',
-        author: 'author3',
-        id: 3,
-      },
-      {
-        title: 'book4',
-        author: 'author4',
-        id: 4,
-      },
-    ],
+    books: [],
   },
   reducers: {
     addBook(state, { payload }) {
@@ -35,7 +15,7 @@ export const slice = createSlice({
     removeBook(state, { payload }) {
       let index = -1;
       for (let i = 0; i < state.books.length; i += 1) {
-        if (state.books[i].id === payload) {
+        if (state.books[i].item_id === payload) {
           index = i;
           break;
         }
@@ -47,6 +27,11 @@ export const slice = createSlice({
         ],
       };
     },
+  },
+  extraReducers: {
+    [getBookListThunk.fulfilled]: (state, { payload }) => ({
+      books: payload,
+    }),
   },
 });
 

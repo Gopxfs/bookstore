@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { removeBookThunk } from '../redux/apiThunks';
 import { removeBook } from '../redux/bookSlice';
 
 const Book = (props) => {
@@ -9,6 +10,7 @@ const Book = (props) => {
 
   const removeButton = (id) => {
     dispatch(removeBook(id));
+    dispatch(removeBookThunk(id));
   };
 
   return (
