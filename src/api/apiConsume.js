@@ -13,7 +13,10 @@ export const addBookToAPI = async (book) => {
 export const removeBookFromAPI = async (book) => {
   await fetch(`${baseURL}/${book.item_id}`, {
     method: 'DELETE',
-    body: { book },
+    body: JSON.stringify(book),
+    headers: {
+      'Content-type': 'application/json',
+    },
   });
 };
 
