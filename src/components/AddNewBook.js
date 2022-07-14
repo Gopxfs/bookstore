@@ -11,7 +11,7 @@ const AddNewBook = () => {
     const newBook = {
       title: form.title.value,
       author: form.author.value,
-      id: Date.now(),
+      item_id: Date.now(),
     };
     dispatch(addBook(newBook));
     form.title.value = '';
