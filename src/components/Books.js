@@ -9,9 +9,7 @@ const Books = () => {
     dispatch(getBookListThunk());
   }, []);
 
-  const bookData = useSelector((state) => state.book.books);
-  const bookList = [];
-  Object.values(bookData).forEach((value) => bookList.push(value[0]));
+  const bookList = useSelector((state) => state.book.books);
   const bookListDisplay = [];
   for (let i = 0; i < bookList.length; i += 1) {
     const newBook = (
