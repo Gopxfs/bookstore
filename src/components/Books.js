@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchBookList } from '../redux/apiThunks';
+import { getBookListThunk } from '../redux/apiThunks';
 import Book from './Book';
 
 const Books = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchBookList());
+    dispatch(getBookListThunk());
   }, []);
 
   const bookData = useSelector((state) => state.book.books);

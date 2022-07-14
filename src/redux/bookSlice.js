@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchBookList } from './apiThunks';
+import { getBookListThunk } from './apiThunks';
 
 export const slice = createSlice({
   name: 'book',
@@ -29,7 +29,7 @@ export const slice = createSlice({
     },
   },
   extraReducers: {
-    [fetchBookList.fulfilled]: (state, { payload }) => ({
+    [getBookListThunk.fulfilled]: (state, { payload }) => ({
       books: payload,
     }),
   },
