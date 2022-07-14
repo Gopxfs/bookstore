@@ -16,7 +16,7 @@ const Books = () => {
       <Book
         title={bookList[i].title}
         author={bookList[i].author}
-        id={bookList[i].id}
+        id={bookList[i].item_id}
       />
     );
     bookListDisplay.push(newBook);
