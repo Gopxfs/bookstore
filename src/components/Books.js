@@ -1,9 +1,17 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchBookList } from '../redux/apiThunks';
 import Book from './Book';
 
 const Books = () => {
-  const bookList = useSelector((state) => state.book.books);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchBookList());
+  }, []);
+
+  const bookData = useSelector((state) => state.book.books);
+  const bookList = [];
+  Object.values(bookData).forEach((value) => bookList.push(value[0]));
   const bookListDisplay = [];
   for (let i = 0; i < bookList.length; i += 1) {
     const newBook = (
