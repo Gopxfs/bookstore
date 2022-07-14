@@ -1,25 +1,24 @@
 const baseURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/8jPJscW2sY5rPxOZDiOs/books';
 
-// add
-// remove
-// get
-
-export const addBook = async (book) => {
-  book.category = book.category ?? 'Fiction';
+export const addBookToAPI = async (book) => {
   await fetch(baseURL, {
     method: 'POST',
+    body: JSON.stringify(book),
+    headers: {
+      'Content-type': 'application/json',
+    },
+  });
+};
+
+export const removeBookFromAPI = async (book) => {
+  await fetch(`${baseURL}/${book.item_id}`, {
+    method: 'DELETE',
     body: { book },
   });
 };
 
-export const removeBook = async () => {
-
-};
-
-export const getBookList = async () => {
+export const getBookListFromAPI = async () => {
   const response = await fetch(baseURL);
   const data = await response.json();
   console.log(data);
 };
-
-export default addBook();
