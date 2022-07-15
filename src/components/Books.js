@@ -27,6 +27,12 @@ const Books = () => {
             <p>Completed</p>
           </div>
         </div>
+        <hr />
+        <div className="chapters">
+          <p>Current Chapter</p>
+          <p className="currentChapter">Chapter 1</p>
+          <button type="button">UPDATE PROGRESS</button>
+        </div>
       </div>
     );
     bookListDisplay.push(newBook);
