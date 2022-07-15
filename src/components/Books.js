@@ -23,8 +23,7 @@ const Books = () => {
   }
   return (
     <>
-      <h1>Books</h1>
-      <div>
+      <div className="bookList">
         {bookListDisplay}
       </div>
     </>
