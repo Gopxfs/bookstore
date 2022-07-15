@@ -13,12 +13,21 @@ const Books = () => {
   const bookListDisplay = [];
   for (let i = 0; i < bookList.length; i += 1) {
     const newBook = (
-      <Book
-        category={bookList[i].category}
-        title={bookList[i].title}
-        author={bookList[i].author}
-        id={bookList[i].item_id}
-      />
+      <div className="bookCard">
+        <Book
+          category={bookList[i].category}
+          title={bookList[i].title}
+          author={bookList[i].author}
+          id={bookList[i].item_id}
+        />
+        <div className="progression">
+          <span className="circle" />
+          <div>
+            <p className="percentage">0%</p>
+            <p>Completed</p>
+          </div>
+        </div>
+      </div>
     );
     bookListDisplay.push(newBook);
   }

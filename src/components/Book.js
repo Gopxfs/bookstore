@@ -16,8 +16,8 @@ const Book = (props) => {
   };
 
   return (
-    <div className="book">
-      <div className="bookDetails">
+    <>
+      <div className="book">
         <div className="bookInfo">
           <p className="category">{category}</p>
           <h2>{title}</h2>
@@ -29,7 +29,7 @@ const Book = (props) => {
           <button type="button">Edit</button>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
