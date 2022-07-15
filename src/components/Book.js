@@ -15,9 +15,15 @@ const Book = (props) => {
 
   return (
     <div className="book">
-      <h2 className="title">{title}</h2>
-      <p className="author">{author}</p>
-      <button className="remove-button" type="button" onClick={() => removeButton(id)}>Remove</button>
+      <div className="bookDetails">
+        <div className="bookInfo">
+          <h2>{title}</h2>
+          <p className="author">{author}</p>
+        </div>
+        <div className="bookActions">
+          <button type="button" onClick={() => removeButton(id)}>Remove</button>
+        </div>
+      </div>
     </div>
   );
 };
