@@ -21,7 +21,7 @@ const Books = () => {
           id={bookList[i].item_id}
         />
         <div className="progression">
-          <span className="circle" />
+          <div className="circle" />
           <div>
             <p className="percentage">0%</p>
             <p>Completed</p>
