@@ -75,13 +75,20 @@ main {
         font-size: 16px;
         font-weight: 300;
         color: $blue_light;
-        padding: 0;
+        padding: 5px 15px;
         border: 0;
         background-color: rgba(255, 255, 255, 0);
+        border-left: solid 2px $gray_border;
+      }
+
+      :first-child {
+        padding-left: 0;
+        border-left: 0;
       }
 
       button:hover {
         cursor: pointer;
+        color: $black;
       }
     }
   }

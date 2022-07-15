@@ -24,7 +24,9 @@ const Book = (props) => {
           <p className="author">{author}</p>
         </div>
         <div className="bookActions">
+          <button type="button">Comments</button>
           <button type="button" onClick={() => removeButton(id)}>Remove</button>
+          <button type="button">Edit</button>
         </div>
       </div>
     </div>
