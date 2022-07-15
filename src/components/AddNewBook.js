@@ -13,7 +13,7 @@ const AddNewBook = () => {
       title: form.title.value,
       author: form.author.value,
       item_id: Date.now(),
-      category: 'not informed',
+      category: 'Action',
     };
     dispatch(addBookThunk(newBook));
     dispatch(addBook(newBook));

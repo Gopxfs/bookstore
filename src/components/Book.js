@@ -5,7 +5,7 @@ import { removeBook } from '../redux/bookSlice';
 
 const Book = (props) => {
   const bookProps = props;
-  const { title, author, id } = bookProps;
+  const { title, author, id, category } = bookProps;
   const dispatch = useDispatch();
 
   const removeButton = (id) => {
@@ -17,6 +17,7 @@ const Book = (props) => {
     <div className="book">
       <div className="bookDetails">
         <div className="bookInfo">
+          <p className="category">{category}</p>
           <h2>{title}</h2>
           <p className="author">{author}</p>
         </div>

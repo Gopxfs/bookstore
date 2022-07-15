@@ -14,6 +14,7 @@ const Books = () => {
   for (let i = 0; i < bookList.length; i += 1) {
     const newBook = (
       <Book
+        category={bookList[i].category}
         title={bookList[i].title}
         author={bookList[i].author}
         id={bookList[i].item_id}
