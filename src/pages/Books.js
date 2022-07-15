@@ -4,6 +4,7 @@ import AddNewBook from '../components/AddNewBook';
 const BooksPage = () => (
   <main>
     <Books />
+    <hr />
     <AddNewBook />
   </main>
 );

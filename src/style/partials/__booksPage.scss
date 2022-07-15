@@ -4,6 +4,11 @@ main {
   align-items: center;
   width: 100%;
   margin-top: 115px;
+
+  hr {
+    width: calc(80% + 50px);
+    border: solid 1px $gray_border;
+  }
 }
 
 .bookList {
