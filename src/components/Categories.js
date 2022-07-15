@@ -11,10 +11,10 @@ const Categories = () => {
   };
 
   return (
-    <>
+    <div className="categories">
       <button type="button" onClick={() => checkStatusButton()}>Check status</button>
       <p>{status}</p>
-    </>
+    </div>
   );
 };
 
