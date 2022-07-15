@@ -58,6 +58,13 @@ main {
         margin: 0;
         color: $blue_light;
       }
+
+      .category {
+        margin: 0;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: $gray;
+      }
     }
 
     .bookActions {
