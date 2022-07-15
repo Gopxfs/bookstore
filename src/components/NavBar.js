@@ -6,12 +6,12 @@ const Navbar = () => (
     <ul>
       <li>
         <NavLink to="/books">
-          Books
+          BOOKS
         </NavLink>
       </li>
       <li>
         <NavLink to="/categories">
-          Categories
+          CATEGORIES
         </NavLink>
       </li>
     </ul>
