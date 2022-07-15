@@ -23,7 +23,7 @@ const Books = () => {
         <div className="progression">
           <div className="circle" />
           <div>
-            <p className="percentage">0%</p>
+            <p className="percentage">100%</p>
             <p>Completed</p>
           </div>
         </div>
