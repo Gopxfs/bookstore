@@ -26,6 +26,7 @@ main {
 .bookCard {
   display: flex;
   flex-direction: row;
+  align-items: center;
   width: 80%;
   height: 10rem;
   padding: 8px 25px;
@@ -91,5 +92,37 @@ main {
         color: $black;
       }
     }
+  }
+  .progression {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 15%;
+    
+    .circle {
+      position: relative;
+      height: 4rem;
+      width: 4rem;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 0 0 5px $blue_high;
+      margin-right: 25px;
+    }
+
+    p {
+      color: $gray;
+      margin: 0;
+      font-size: 0.875rem;
+    }
+
+    .percentage {
+      font-size: 2rem;
+      color: $black;
+    }
+  }
+
+  hr {
+    height: 4.25rem;
+    width: 0;
   }
 }
