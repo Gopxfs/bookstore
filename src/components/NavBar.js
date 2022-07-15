@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import profilePlaceholder from '../images/profilePlaceholder.png';
 
 const Navbar = () => (
   <nav>
@@ -15,6 +16,7 @@ const Navbar = () => (
         </NavLink>
       </li>
     </ul>
+    <img src={profilePlaceholder} alt="Profile" />
   </nav>
 );
 
