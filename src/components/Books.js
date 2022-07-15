@@ -29,7 +29,7 @@ const Books = () => {
         </div>
         <hr />
         <div className="chapters">
-          <p>Current Chapter</p>
+          <p>CURRENT CHAPTER</p>
           <p className="currentChapter">Chapter 1</p>
           <button type="button">UPDATE PROGRESS</button>
         </div>
