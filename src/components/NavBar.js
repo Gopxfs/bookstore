@@ -1,19 +1,22 @@
 import { NavLink } from 'react-router-dom';
+import profilePlaceholder from '../images/profilePlaceholder.png';
 
 const Navbar = () => (
   <nav>
+    <p>Gabriel&apos;s bookstore</p>
     <ul>
       <li>
         <NavLink to="/books">
-          Books
+          BOOKS
         </NavLink>
       </li>
       <li>
         <NavLink to="/categories">
-          Categories
+          CATEGORIES
         </NavLink>
       </li>
     </ul>
+    <img src={profilePlaceholder} alt="Profile" />
   </nav>
 );
 

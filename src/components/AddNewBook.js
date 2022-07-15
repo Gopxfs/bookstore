@@ -13,7 +13,7 @@ const AddNewBook = () => {
       title: form.title.value,
       author: form.author.value,
       item_id: Date.now(),
-      category: 'not informed',
+      category: 'Action',
     };
     dispatch(addBookThunk(newBook));
     dispatch(addBook(newBook));
@@ -22,7 +22,7 @@ const AddNewBook = () => {
   };
 
   return (
-    <div className="AddNewBook">
+    <div className="addNewBook">
       <h2>ADD NEW BOOK</h2>
       <form onSubmit={(e) => { createNewBook(e); }}>
         <input type="text" name="title" placeholder="Book title" required />
